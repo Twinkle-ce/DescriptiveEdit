@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <script>
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+        el.textContent = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-zh');
+      });
+
+      // 更新按钮样式
+      const buttons = document.querySelectorAll('#lang-switcher .lang-btn');
+      buttons.forEach(btn => {
+        // 按钮变大样式
+        btn.style.fontSize = '1.2rem';      // 文字变大
+        btn.style.padding = '0.6rem 1.2rem'; // 按钮大小加大
+        btn.style.borderRadius = '8px';     // 圆角
+
+        if (btn.textContent.toLowerCase() === (lang === 'en' ? 'english' : '中文')) {
+          btn.classList.add('active');
+          btn.style.backgroundColor = '#4a90e2';
+          btn.style.color = 'white';
+        } else {
+          btn.classList.remove('active');
+          btn.style.backgroundColor = '#f0f0f0';
+          btn.style.color = '#333';
+        }
+      });
+    }
+
+    // 默认语言：英文
+    document.addEventListener('DOMContentLoaded', () => setLanguage('en'));
+  </script>
+
+
+
+  <meta charset="utf-8">
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- <meta property="og:image" content="static/image/your_banner_image.png" /> -->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- <meta name="twitter:image" content="static/images/your_twitter_banner_image.png"> -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Academic Project Page</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <style>
+    .image-shadow {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .image-shadow:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Language Switcher -->
+  <div style="text-align:center; margin: 1rem;">
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('zh')">中文</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"
+              data-en="Describe, Don't Dictate: Semantic Image Editing with Natural Language Intent"
+              data-zh="描述而非指令：基于自然语言意图的语义图像编辑">
+              Describe, Don't Dictate: Semantic Image Editing with Natural Language Intent
+            </h1>
+
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank" data-en="En Ci" data-zh="慈恩">En
+                  Ci</a><sup>1</sup><sup>*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank" data-en="Shanyan Guan" data-zh="官善琰">Shanyan
+                  Guan</a><sup>2</sup><sup>*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank" data-en="Yanhao Ge" data-zh="葛彦昊">Yanhao
+                  Ge</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank" data-en="Yilin Zhang" data-zh="张毅霖">Yilin
+                  Zhang</a><sup>1</sup>,
+              </span><br>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank" data-en="Wei Li" data-zh="李伟">Wei
+                  Li</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank" data-en="Zhenyu Zhang" data-zh="张振宇">Zhenyu
+                  Zhang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank" data-en="Jian Yang" data-zh="杨健">Jian
+                  Yang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank" data-en="Ying Tai" data-zh="邰颖">Ying
+                  Tai</a><sup>1</sup> <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+
+            <div class="is-size-4 publication-authors" style="line-height: 1.6;">
+              <!-- 机构信息 -->
+              <div data-en="1 Nanjing University, 2 vivo" data-zh="1 南京大学, 2 vivo"></div>
+
+              <!-- 论文 / 会议信息 -->
+              <div data-en="ICCV 2025" data-zh="ICCV 2025" style="font-weight: bold;"></div>
+
+              <!-- 特殊符号 / 贡献说明 -->
+              <div data-en="* Indicates Equal Contribution, ✉ Corresponding author" data-zh="* 表示贡献相等, ✉ 通讯作者">
+              </div>
+            </div>
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2508.20505" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark" data-en="Arxiv" data-zh="Arxiv">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Arxiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark" data-en="Coming soon..."
+                    data-zh="敬请期待...">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Coming soon...</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser Section -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/head_photo-v4.png" alt="Banner Image" class="image-shadow"
+          style="width: 100%; height: auto;" />
+        <h2 class="subtitle has-text-centered"
+          data-en="Our DescriptiveEdit enables description-based rather than instruction-based image editing, achieving strong performance in both global editing (Top) and local editing (Bottom). The original image is on the left, with the edit description below each edited image."
+          data-zh="我们的 DescriptiveEdit 方法实现了基于描述而非指令的图像编辑，在全局（上）和局部（下）编辑任务中均取得出色效果。原图位于左侧，每张编辑图下方显示对应的编辑描述。">
+
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract Section -->
+  <section class="section hero is-light" style="margin-top: 2rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" data-en="Abstract" data-zh="摘要">Abstract</h2>
+          <div class="content has-text-justified">
+            <p style="font-size: 1.25rem;"
+              data-en="Despite the progress in text-to-image generation, semantic image editing remains a challenge. Inversion-based algorithms unavoidably introduce reconstruction errors, while instruction-based models mainly suffer from limited dataset quality and scale. To address these problems, we propose a descriptive-prompt-based editing framework, named DescriptiveEdit. The core idea is to re-frame `instruction-based image editing' as `reference-image-based text-to-image generation', which preserves the generative power of well-trained Text-to-Image models without architectural modifications or inversion. Specifically, taking the reference image and a prompt as input, we introduce a Cross-Attentive UNet, which newly adds attention bridges to inject reference image features into the prompt-to-edit-image generation process. Owing to its text-to-image nature, DescriptiveEdit overcomes limitations in instruction dataset quality, integrates seamlessly with ControlNet, IP-Adapter, and other extensions, and is more scalable. Experiments on the Emu Edit benchmark show it improves editing accuracy and consistency."
+              data-zh="尽管文本到图像生成取得了进展，语义图像编辑仍然具有挑战性。基于反演的方法不可避免地产生重建误差，而基于指令的模型主要受限于数据集质量和规模。为解决这些问题，我们提出了一种基于描述提示的编辑框架，称为 DescriptiveEdit。核心思想是将“基于指令的图像编辑”重新定义为“基于参考图像的文本到图像生成”，无需修改模型架构或进行反演，即可保留预训练文本到图像模型的生成能力。具体来说，输入参考图像和描述提示，我们引入了 Cross-Attentive UNet，通过新增的注意力桥将参考图像特征注入到编辑生成过程中。由于其文本到图像的特性，DescriptiveEdit 克服了指令数据集质量的限制，可与 ControlNet、IP-Adapter 等扩展无缝集成，并且具有更高的可扩展性。在 Emu Edit 基准上的实验表明，它提高了编辑的准确性和一致性。">
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="hero teaser" style="margin-top: 2rem;">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3 has-text-centered" data-en="Method Overview" data-zh="方法概览">Method Overview</h2>
+        <img src="static/images/architecture_camera_ready-v4.png" alt="Banner Image" class="image-shadow"
+          style="width: 100%; height: auto;" />
+        <h2 style="text-align: justify; font-size: 1.25rem; margin-top: 1rem;"
+          data-en="Overview of the DescriptiveEdit framework. We propose a novel image editing framework that reinterprets the role of text guidance by transitioning from instruction-based to description-driven editing. Instead of modifying diffusion model architectures or requiring additional training on instruction-labeled datasets, DescriptiveEdit leverages pre-trained text-to-image models in a plug-and-play manner, preserving their original generative capacity. To achieve this, we introduce a Cross-Attentive UNet, which injects reference image features into the denoising process via a lightweight attention bridge. This mechanism enables the model to align the edited output with the structural and semantic cues of the original image, while ensuring faithful adherence to the descriptive prompt. Moreover, instead of modifying the model's core architecture, we apply low-rank parameter tuning (LoRA), enabling parameter-efficient adaptation without disrupting the pre-trained generative capabilities."
+          data-zh="DescriptiveEdit 框架概览。 我们提出了一种新颖的图像编辑框架，将文本引导从指令驱动转为描述驱动。DescriptiveEdit 无需修改扩散模型结构，也不依赖额外的指令标注数据集训练，而是以即插即用的方式利用预训练文本到图像模型，保留原有生成能力。为实现这一目标，我们引入了 Cross-Attentive UNet，通过轻量级注意力桥将参考图像特征注入去噪过程。该机制使模型在编辑输出时能对齐原图的结构与语义信息，同时忠实于描述性提示。此外，我们使用低秩参数调优（LoRA），在不破坏预训练生成能力的前提下，实现高效参数适配。">
+          <b>Overview of the DescriptiveEdit framework.</b> We propose a novel image editing framework...
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser is-light" style="margin-top: 2rem;">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3 has-text-centered" data-en="Experiment" data-zh="实验">Experiment</h2>
+
+        <section style="margin-top: 2rem;">
+          <h3 class="title is-4 has-text-centered" data-en="Quantitative Results" data-zh="量化结果">Quantitative Results
+          </h3>
+          <figure style="max-width: 900px; margin: 0 auto;">
+            <img src="static/images/quantitative_results.png" class="image-shadow" alt="Quantitative Example"
+              style="width: 100%; height: auto;" />
+          </figure>
+          <p style="font-size: 1.25rem; text-align: justify; max-width: 900px; margin: 1rem auto 0;"
+            data-en="Quantitative Comparison on the EMU-Edit test-set. We evaluate models in terms of instruction adherence (CLIP-T), image consistency (L1, L2, SSIM, DINO-I, CLIP-I, LPIPS), and image quality (PSNR). ∗ indicates results from the original paper due to unavailable code. † indicates results obtained by retraining models on our training dataset. The best and second-best results are in bold and underlined."
+            data-zh="EMU-Edit 测试集上的量化对比。我们从指令遵循性（CLIP-T）、图像一致性（L1、L2、SSIM、DINO-I、CLIP-I、LPIPS）和图像质量（PSNR）对模型进行评估。∗ 表示因代码不可用引用原论文结果。† 表示在我们的训练集上重新训练模型得到的结果。最佳和次佳结果以加粗和下划线标出。">
+            Quantitative Comparison on the EMU-Edit test-set...
+          </p>
+        </section>
+
+        <section style="margin-top: 2rem;">
+          <h3 class="title is-4 has-text-centered" data-en="Qualitative Results" data-zh="定性结果">Qualitative Results</h3>
+          <figure style="max-width: 900px; margin: 0 auto;">
+            <img src="static/images/compare_photo-v6.png" class="image-shadow" alt="Qualitative Chart"
+              style="width: 100%; height: auto;" />
+          </figure>
+          <p style="font-size: 1.25rem; text-align: justify; max-width: 900px; margin: 1rem auto 0;"
+            data-en="Qualitative comparison of global and local edits across training-based and training-free methods."
+            data-zh="基于训练与无需训练方法的全局与局部编辑定性比较。">
+            Qualitative comparison...
+          </p>
+        </section>
+
+        <section style="margin-top: 2rem; margin-bottom: 1rem;">
+          <h3 class="title is-4 has-text-centered" data-en="Ablation Studies" data-zh="消融实验">Ablation Studies</h3>
+
+          <figure style="max-width: 900px; margin: 0 auto;">
+            <img src="static/images/description_vs_instruction.png" class="image-shadow" alt="Ablation Result 1"
+              style="width: 100%; height: auto;" />
+            <figcaption style="text-align: justify; font-size: 1.25rem; margin-top: 0.5rem;"
+              data-en="Qualitative comparison between instruction-based and description-based editing. Description prompts yield richer, more precise edits in terms of structure and semantics."
+              data-zh="指令驱动与描述驱动编辑的定性比较。描述提示在结构和语义上产生更丰富、更精确的编辑效果。">
+              Qualitative comparison...
+            </figcaption>
+          </figure>
+
+          <figure style="max-width: 900px; margin: 2rem auto 0;">
+            <img src="static/images/reference_guidance.png" class="image-shadow" alt="Ablation Result 2"
+              style="width: 100%; height: auto;" />
+            <figcaption style="text-align: justify; font-size: 1.25rem; margin-top: 0.5rem;"
+              data-en="Effect of λI on Image Editing (Top row: autumn; Bottom row: winter). From left to right, λI increases linearly."
+              data-zh="λI 对图像编辑的影响（上行：秋季；下行：冬季）。从左到右，λI 线性增加。">
+              Effect of λI...
+            </figcaption>
+          </figure>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser" style="margin-top: 2rem;">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3 has-text-centered" data-en="Extensions" data-zh="扩展">Extensions</h2>
+
+        <figure style="max-width: 900px; margin: 0 auto;">
+          <img src="static/images/community.png" class="image-shadow" alt="Community Model Example 1"
+            style="width: 100%; height: auto;" />
+          <figcaption style="text-align: justify; font-size: 1.25rem; margin-top: 0.5rem;"
+            data-en="Cross-architecture compatibility demonstrated with: (a) IP-Adapter for seasonal transformation (original → winter), (b) ControlNet for seasonal transformation (original → winter), and (c) RealCartoon3D for cartoon stylization (original → 3D animated style)."
+            data-zh="跨架构兼容性示例：（a）IP-Adapter 用于季节转换（原始 → 冬季），（b）ControlNet 用于季节转换（原始 → 冬季），（c）RealCartoon3D 用于卡通风格化（原始 → 3D 动画风格）。">
+            Cross-architecture compatibility...
+          </figcaption>
+        </figure>
+
+        <figure style="max-width: 900px; margin: 2rem auto 0;">
+          <img src="static/images/flux-v3.png" class="image-shadow" alt="Community Model Example 2"
+            style="width: 100%; height: auto;" />
+          <figcaption style="text-align: justify; font-size: 1.25rem; margin-top: 0.5rem;"
+            data-en="Showcases of applying DescriptiveEdit to Flux, a DiT-based text-to-image model."
+            data-zh="DescriptiveEdit 在 Flux（基于 DiT 的文本到图像模型）上的应用示例。">
+            Showcases...
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser is-light" style="margin-top: 2rem; margin-bottom: 4rem;">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3 has-text-centered" data-en="Conclusion" data-zh="结论">Conclusion</h2>
+        <p style="font-size: 1.25rem; text-align: justify; max-width: 900px; margin: 1rem auto 0;"
+          data-en="We proposed a description-based method, DescriptiveEdit, that unifies semantic image editing to the text-to-image generation framework. An attention bridge enables efficient feature integration, while LoRA-based tuning ensures parameter efficiency and compatibility. Experiments show superior editing accuracy and consistency, establishing a scalable, plug-and-play paradigm for semantic image editing."
+          data-zh="我们提出了一种基于描述的方法 DescriptiveEdit，将语义图像编辑统一到文本到图像生成框架。注意力桥实现高效特征融合，LoRA 调优确保参数效率与兼容性。实验表明其在编辑准确性和一致性上表现优异，建立了可扩展的即插即用语义图像编辑范式。">
+          We proposed a description-based method...
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" data-en="BibTeX" data-zh="参考文献">BibTeX</h2>
+      <pre><code data-en="@inproceedings{ci2025describe,
+  title     = {Describe, Don’t Dictate: Semantic Image Editing with Natural Language Intent},
+  author    = {Ci, En and Guan, Shanyan and Ge, Yanhao and Zhang, Yilin and Li, Wei and Zhang, Zhenyu and Yang, Jian and Tai, Ying},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2025},
+}" data-zh="@inproceedings{ci2025describe,
+  title     = {Describe, Don’t Dictate: Semantic Image Editing with Natural Language Intent},
+  author    = {Ci, En and Guan, Shanyan and Ge, Yanhao and Zhang, Yilin and Li, Wei and Zhang, Zhenyu and Yang, Jian and Tai, Ying},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2025},
+}">@inproceedings{ci2025describe,
+  title     = {Describe, Don’t Dictate: Semantic Image Editing with Natural Language Intent},
+  author    = {Ci, En and Guan, Shanyan and Ge, Yanhao and Zhang, Yilin and Li, Wei and Zhang, Zhenyu and Yang, Jian and Tai, Ying},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2025},
+}</code></pre>
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+  <footer style="text-align:center; margin-top: 2rem;">
+    <a href="https://clustrmaps.com/site/your-site" target="_blank" rel="noopener noreferrer"
+      style="display: inline-block;">
+      <img src="https://clustrmaps.com/map_v2.png?cl=YOUR_SITE_CODE" alt="Visitor Map"
+        style="width: 300px; height: auto; display: block; margin: 0 auto;" />
+    </a>
+  </footer>
+
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
