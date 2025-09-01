@@ -6,7 +6,10 @@
   <script>
     function setLanguage(lang) {
       document.querySelectorAll('[data-en][data-zh]').forEach(el => {
-        el.textContent = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-zh');
+        const textNode = Array.from(el.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+        if (textNode) {
+          textNode.nodeValue = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-zh');
+        }
       });
 
       // 更新按钮样式
