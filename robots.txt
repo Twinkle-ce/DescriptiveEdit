@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://twinkle-ce.github.io/DescriptiveEdit/sitemap.xml
